@@ -1,0 +1,54 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName bonbon
+    blueprints []
+    buildTool gradle
+    cacheProvider no
+    clientFramework vue
+    clientPackageManager npm
+    clientTheme flatly
+    clientThemeVariant primary
+    databaseType sql
+    devDatabaseType h2Disk
+    prodDatabaseType postgresql
+    dtoSuffix DTO
+    enableGradleEnterprise false
+    enableHibernateCache false
+    enableSwaggerCodegen false
+    enableTranslation false
+    gradleEnterpriseHost ""
+    jhiPrefix jhi
+    jhipsterVersion "7.3.1"
+    jwtSecretKey "ODFjNDIyYzI0ZTIzNmQ0MDBkMjRkOTYxMzVlOGQ2YzIwMzFkZTJmY2MwNjEwMjI4YjkwZGFkNjA3Njk1ZmFkNTk1YzM4YzdlYWYzYWVjOWI2OTQxYmRiMjUyMzVhZDgwZTkyN2UwNzMzYTI1MTVhZmY5MTgyYjMyNTliNzk4ZDQ="
+    languages [en, fr]
+    messageBroker false
+    nativeLanguage en
+    otherModules []
+    packageName one.genchev.bonbon
+    reactive true
+    searchEngine false
+    serverPort 8080
+    serviceDiscoveryType no
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks [cypress]
+    websocket false
+    withAdminUi true
+  }
+
+  entities Listing
+}
+
+entity Listing {
+  name String maxlength(100)
+  description String maxlength(2000)
+  price Float
+  address String maxlength(100)
+  category String
+}
+dto Listing with mapstruct
+paginate Listing with pagination
+service Listing with serviceClass
